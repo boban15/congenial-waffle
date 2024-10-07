@@ -6,10 +6,6 @@
     <title>My JavaScript Page</title>
 </head>
 <body>
-    <h1>Current Date:</h1>
-    <p id="date"></p>
-
-    
     <script src="https://thunkable.github.io/webviewer-extension/thunkableWebviewerExtension.js" type="text/javascript">
         // when we get a message from the app, display it on the page
 ThunkableWebviewerExtension.receiveMessage(function(message) {
@@ -21,7 +17,7 @@ ThunkableWebviewerExtension.receiveMessage(function(message) {
         const month = today.getMonth() + 1;
         const year = today.getFullYear();
 
-    ThunkableWebviewerExtension.postMessage('document.getElementById('date').textContent = `${day}/${month}/${year}`'); 
+    ThunkableWebviewerExtension.postMessage('`${day}/${month}/${year}`'); 
     </script>
 </body>
 </html>
