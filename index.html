@@ -9,13 +9,19 @@
     <h1>Current Date:</h1>
     <p id="date"></p>
 
-    <script>
+    
+    <script src="https://thunkable.github.io/webviewer-extension/thunkableWebviewerExtension.js" type="text/javascript">
+        // when we get a message from the app, display it on the page
+ThunkableWebviewerExtension.receiveMessage(function(message) {
+  // Do something with your message
+  alert(message)
+});
         const today = new Date();
         const day = today.getDate();
         const month = today.getMonth() + 1;
         const year = today.getFullYear();
 
-        document.getElementById('date').textContent = `${day}/${month}/${year}`;
+    ThunkableWebviewerExtension.postMessage('document.getElementById('date').textContent = `${day}/${month}/${year}`'); 
     </script>
 </body>
 </html>
